@@ -1,0 +1,31 @@
+$light: #888888;
+$primary: #9a0404;
+$dark: #111111;
+$secondary: #223a62;
+
+$body-color: #333333 !default;
+
+$font-size-base: 1rem;
+$font-family-base: 'OpenSans',
+sans-serif;
+$headings-font-family: 'Arsenal',
+sans-serif;
+$headings-font-weight: bold;
+
+$link-hover-decoration: none !default;
+$input-btn-focus-width: 0 !default;
+$input-btn-focus-color: rgba(#fff, 0) !default;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$border-width: 0 !default;
+
+$border-radius: 0px;
+$btn-padding-x: 30px;
+$btn-padding-y: 15px;
+
+$h1-font-size: $font-size-base * 2.25 !default;
+$h2-font-size: $font-size-base * 1.875 !default;
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 1.125 !default;
+$h6-font-size: $font-size-base * 1 !default;

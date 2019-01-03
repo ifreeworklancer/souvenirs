@@ -1,0 +1,12 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 18px;
+    font-family: $headings-font-family;
+    font-weight: normal;
+    transition: .5s;
+    z-index: 5;
+}

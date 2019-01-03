@@ -1,0 +1,115 @@
+.header-contacts-list {
+    display: flex;
+    align-items: center;
+
+    &-item {
+        margin-right: 25px;
+
+        a {
+            position: relative;
+            padding-left: 25px;
+            display: block;
+            font-size: 14px;
+            color: $light;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &--email {
+            a {
+                &::before {
+                    top: 60%;
+                    width: 14px;
+                    height: 12px;
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCA0ODUuMjExIDQ4NS4yMTEiPjxwYXRoIGZpbGw9IiM4ODg4ODgiIGQ9Ik00ODUuMjExLDM2My45MDZjMCwxMC42MzctMi45OTIsMjAuNDk4LTcuNzg1LDI5LjE3NEwzMjQuMjI1LDIyMS42N2wxNTEuNTQtMTMyLjU4NGM1Ljg5NSw5LjM1NSw5LjQ0NiwyMC4zNDQsOS40NDYsMzIuMjE5VjM2My45MDZ6IE0yNDIuNjA2LDI1Mi43OTNsMjEwLjg2My0xODQuNWMtOC42NTMtNC43MzctMTguMzk3LTcuNjQyLTI4LjkwOC03LjY0Mkg2MC42NTFjLTEwLjUyNCwwLTIwLjI3MSwyLjkwNS0yOC44ODksNy42NDJMMjQyLjYwNiwyNTIuNzkzeiBNMzAxLjM5MywyNDEuNjMxbC00OC44MDksNDIuNzM0Yy0yLjg1NSwyLjQ4Ny02LjQxLDMuNzI5LTkuOTc4LDMuNzI5Yy0zLjU3LDAtNy4xMjUtMS4yNDItOS45OC0zLjcyOWwtNDguODItNDIuNzM2TDI4LjY2Nyw0MTUuMjNjOS4yOTksNS44MzQsMjAuMTk3LDkuMzI5LDMxLjk4Myw5LjMyOWgzNjMuOTExYzExLjc4NCwwLDIyLjY4Ny0zLjQ5NSwzMS45ODMtOS4zMjlMMzAxLjM5MywyNDEuNjMxeiBNOS40NDgsODkuMDg1QzMuNTU0LDk4LjQ0LDAsMTA5LjQyOSwwLDEyMS4zMDV2MjQyLjYwMmMwLDEwLjYzNywyLjk3OCwyMC40OTgsNy43ODksMjkuMTc0bDE1My4xODMtMTcxLjQ0TDkuNDQ4LDg5LjA4NXoiLz48L3N2Zz4=);
+                }
+            }
+        }
+
+        &--vodafone {
+            a {
+                &::before {
+                    width: 14px;
+                    height: 14px;
+                    background-image: url('../images/icon/decor/vodafone.png');
+                }
+            }
+        }
+
+        &--kyivstar {
+            a {
+                &::before {
+                    width: 12px;
+                    height: 12px;
+                    background-image: url('../images/icon/decor/kyivstar.png');
+                }
+            }
+        }
+
+        &--lifecell {
+            a {
+                &::before {
+                    width: 11px;
+                    height: 11px;
+                    background-image: url('../images/icon/decor/lifecell.png');
+                }
+            }
+        }
+    }
+}
+
+.slider-nav-number {
+    display: flex;
+
+    &-item {
+        margin: 0 3px;
+        font-size: 12px;
+        font-weight: bold;
+        user-select: none;
+    }
+
+    &--white {
+        color: #fff;
+    }
+}
+
+.slider-arrow {
+    display: flex;
+    justify-content: center;
+
+    &-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background: #fff;
+        border: 1px solid #d7d7d7;
+        cursor: pointer;
+        transition: .5s;
+
+        &:hover {
+            background: #e1e1e1;
+        }
+
+        svg {
+            fill: $primary;
+        }
+
+        &--next {
+            border-left: 0;
+        }
+    }
+}

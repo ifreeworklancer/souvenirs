@@ -1,0 +1,48 @@
+.burger-menu {
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-left: auto;
+    width: 20px;
+    height: 17px;
+    cursor: pointer;
+    z-index: 120;
+
+    .line {
+        width: 20px;
+        height: 2px;
+        background: $primary;
+        transition: .5s;
+    }
+}
+
+.menu {
+    @extend %pos;
+    position: fixed;
+    display: none;
+    z-index: 100;
+    background: #fff;
+
+    &-nav {
+        @extend %pos;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header-nav-list {
+            display: block;
+
+            li {
+                margin: 0 0 20px;
+                
+                a {
+                    font-size: 20px;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
