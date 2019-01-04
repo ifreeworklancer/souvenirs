@@ -1,10 +1,11 @@
 import jquery from 'jquery';
 import Flickity from 'flickity';
-import ScrollReveal from 'scrollreveal';
+// import ScrollReveal from 'scrollreveal';
 import 'flickity/dist/flickity.css';
 import IMask from 'imask';
 
 window.jQuery = window.$ = jquery;
+
 
 (function () {
 
@@ -57,7 +58,7 @@ window.jQuery = window.$ = jquery;
         }
     });
 
-    $('.label-search').on('click', function(){
+    $('.label-search').on('click', function () {
         $('.form-control-search').toggleClass('active');
     });
 
@@ -80,7 +81,6 @@ window.jQuery = window.$ = jquery;
     }, function () {
         $(this).children().not('.active').removeClass('is-hover');
     });
-
 
     /**
      * Modal
@@ -185,3 +185,21 @@ window.jQuery = window.$ = jquery;
     // });
 
 })(jQuery)
+
+
+/**
+ * Filter Rangre Multiply 
+ */
+var elm = document.getElementById('catalog-filter-price');
+var container = elm.parentNode;
+var values = elm.getAttribute('data-values').split(' ');
+
+values.forEach(function (value, i, values) {
+    var rangePart = elm.cloneNode();
+    rangePart.type = 'range';
+    rangePart.removeAttribute('data-values');
+    rangePart.value = value;
+    rangePart = container.insertBefore(rangePart, elm);
+});
+
+elm.remove();
