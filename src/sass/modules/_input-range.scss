@@ -26,3 +26,105 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
     @include multirange-thumb;
 }
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 4.5px 0;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+    background: #223a62;
+    border-radius: 0;
+    border: 0px solid rgba(0, 0, 0, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0.9px 0.9px 1px rgba(34, 58, 98, 0), 0px 0px 0.9px rgba(41, 69, 117, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+    height: 12px;
+    width: 12px;
+    border-radius: 26px;
+    background: #223a62;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4.5px;
+    position: relative;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #26416d;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+    background: #223a62;
+    border-radius: 1px;
+    border: 0px solid rgba(0, 0, 0, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0.9px 0.9px 1px rgba(34, 58, 98, 0), 0px 0px 0.9px rgba(41, 69, 117, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+    height: 12px;
+    width: 12px;
+    border-radius: 26px;
+    background: #223a62;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #1e3357;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #223a62;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 0.9px 0.9px 1px rgba(34, 58, 98, 0), 0px 0px 0.9px rgba(41, 69, 117, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+    height: 12px;
+    width: 12px;
+    border-radius: 26px;
+    background: #223a62;
+    cursor: pointer;
+    height: 3px;
+    position: relative;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #223a62;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #26416d;
+}

@@ -27,5 +27,121 @@ $intro = [
 ];
 
 $catalog = [
-    'title' => 'Каталог'
+    'title' => 'Каталог',
+    'filters' => [
+        [
+            'name' => 'Все товары',
+            'image' => '../images/icon/filter/filter-item-1.svg',
+            'sub' => [
+                'Новинки',
+            ],
+        ],
+        [
+            'name' => 'Подарочные наборы',
+            'image' => '../images/icon/filter/filter-item-2.svg',
+            'sub' => [
+                'Новогодние',
+                'Подкатегория'
+            ],
+        ],
+        [
+            'name' => 'Керамика',
+            'image' => '../images/icon/filter/filter-item-3.svg',
+            'sub' => null,
+        ],
+    ],
+    'list' => [
+        [
+            'title' => 'Сувенир "Кот Утильный"',
+            'old_price' => '',
+            'price' => '146',
+            'image' => '../images/content/main/catalog/catalog-item-1.jpg',
+            'hit' => true,
+            'discount' => false,
+            'new' => false
+        ],
+        [
+            'title' => 'Деревянная открытка "Милый ангел"',
+            'old_price' => '99',
+            'price' => '69',
+            'image' => '../images/content/main/catalog/catalog-item-2.jpg',
+            'hit' => false,
+            'discount' => true,
+            'new' => true
+        ],
+        [
+            'title' => 'Зайчик Мася',
+            'old_price' => '225',
+            'price' => '191',
+            'image' => '../images/content/main/catalog/catalog-item-3.jpg',
+            'hit' => false,
+            'discount' => true,
+            'new' => false
+        ],
+        [
+            'title' => 'Сувенир "Ангелочек Мила" ',
+            'old_price' => '150',
+            'price' => '120',
+            'image' => '../images/content/main/catalog/catalog-item-2.jpg',
+            'hit' => true,
+            'discount' => true,
+            'new' => true
+        ],
+        [
+            'title' => 'Украинская скатерть "Карпаты"',
+            'old_price' => '',
+            'price' => '205',
+            'image' => '../images/content/main/catalog/catalog-item-3.jpg',
+            'hit' => true,
+            'discount' => true,
+            'new' => false
+        ],
+        [
+            'title' => 'Набор чашек "Новогодние хрюшки"',
+            'old_price' => '',
+            'price' => '455',
+            'image' => '../images/content/main/catalog/catalog-item-1.jpg',
+            'hit' => false,
+            'discount' => false,
+            'new' => false
+        ],
+        [
+            'title' => 'Корпоративный подарочный набор "Новогодний"',
+            'description' => '<li>Сувенир “Кот Утильный” маленький</li> <li>Деревянная открытка “Олень”</li> <li>Деревянная открытка-бантик</li>',
+            'old_price' => '124',
+            'price' => '99',
+            'image' => '../images/content/main/catalog/catalog-item-3.jpg',
+            'image_bg' => '../images/content/main/catalog/catalog-set-bg.jpg',
+            'hit' => false,
+            'discount' => true,
+            'new' => false
+        ],
+        [
+            'title' => 'Украинская скатерть "Карпаты"',
+            'old_price' => '',
+            'price' => '205',
+            'image' => '../images/content/main/catalog/catalog-item-3.jpg',
+            'hit' => true,
+            'discount' => true,
+            'new' => false
+        ],
+        [
+            'title' => 'Набор чашек "Новогодние хрюшки"',
+            'old_price' => '',
+            'price' => '455',
+            'image' => '../images/content/main/catalog/catalog-item-1.jpg',
+            'hit' => false,
+            'discount' => false,
+            'new' => false
+        ],
+        [
+            'title' => 'Сувенир "Ангелочек Мила" ',
+            'old_price' => '150',
+            'price' => '120',
+            'image' => '../images/content/main/catalog/catalog-item-2.jpg',
+            'hit' => true,
+            'discount' => true,
+            'new' => true
+        ],
+    ],
 ];

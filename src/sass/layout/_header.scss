@@ -7,7 +7,7 @@
 
   @media (min-width: map_get($grid-breakpoints, xl)) {
     padding: 0;
-}
+  }
 
   .logo {
     display: block;
@@ -139,7 +139,7 @@
       &:hover {
         color: $primary;
 
-        .header-nav-burger { 
+        .header-nav-burger {
 
           .line {
             background: $primary;
