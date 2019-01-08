@@ -21,7 +21,8 @@ require_once('views/base/header.php');
 
 $sections = [
 	'intro',
-    'catalog',
+	'catalog',
+	'new-articles',
 ];
 
 foreach ($sections as $section) {

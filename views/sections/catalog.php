@@ -77,13 +77,13 @@
         </div>
         <div class="catalog-list">
             <div class="row justify-content-center justify-content-lg-end">
-                <div class="col-sm-7 col-lg-3 h-100">
+                <div class="col-sm-5 col-lg-3 h-100">
                     <div class="catalog-sidebar-filter">
                         <ul class="catalog-sidebar-filter-list">
                             <?php
                                 foreach($catalog['filters'] as $item) {
                                     echo '<li class="filter-list-item">'
-                                        .'<a href="#">' . $item['name'] . '</a>';
+                                        .'<a href="#" class="filter-list-item__link"><div class="icon">' . $item['icon'] . '</div>' . $item['name'] . '</a>';
                                         if($item['sub'] != null) {
                                         echo '<ul class="filter-hidden-list">';
                                             foreach($item['sub'] as $val) {
@@ -104,7 +104,7 @@
                     foreach($catalog['list'] as $item) {
                         $count++;
                         if($count != 7) {
-                            echo '<div class="col-sm-7 col-lg-3 mb-4">'
+                            echo '<div class="col-sm-5 col-lg-3 mb-4">'
                                 .'<div class="catalog-card">'
                                     .'<div class="catalog-card-header">'
                                         .'<div class="img" style="background-image: url(' . $item['image'] . ')"></div>';
@@ -127,7 +127,7 @@
                                     .'<div class="content">'
                                         .'<h6 class="title">' . $item['title'] . '</h6>'
                                         .'<div class="price">';
-                                        if($item['old_price'] != '') {
+                                        if($item['old_price'] != null) {
                                             echo '<div class="old-price"><span>' . $item['old_price'] . '</span></div>';
                                         }                                    
                                         echo '<div class="new-price">' . $item['price'] . '</div>'
@@ -139,23 +139,23 @@
                             .'</div>'
                         .'</div>';
                         } elseif($count == 7) {
-                            echo '<div class="col-sm-10 mb-4">'
+                            echo '<div class="col-sm-5 col-lg-10 mb-4">'
                                     .'<div class="catalog-card catalog-card--set" style="background-image: url(' . $item['image_bg'] . ')">'
                                         .'<div class="catalog-card-set-prev">'
                                             .'<div class="img" style="background-image: url(' . $item['image'] . ')"></div>'
                                         .'</div>'
                                         .'<div class="catalog-card-set-main">'
-                                        .'<a href="page/page-basket.php" class="catalog-card-basket"><svg width="16" height="17"><use xlink:href="#catalog-basket"></use></svg></a>'
                                             .'<div class="content">'
                                                 .'<div class="sub-title">Набор</div>'
                                                 .'<h5 class="title">' . $item['title'] . '</h5>'
                                                 .'<div class="price">';
-                                                    if($item['old_price'] != '') {
+                                                if($item['old_price'] != null) {
                                                         echo '<div class="old-price">' . $item['old_price'] . '</div>';
                                                     }  
                                                 echo '<div class="new-price">' . $item['price'] . '<span class="currency">грн</span></div>'
                                                 .'</div>'
                                                 .'<ul class="description-list">' . $item['description'] . '</ul>'
+                                                .'<a href="#" class="more-info">Подробнее</a>'
                                             .'</div>'
                                         .'</div>';
                                         if($item['hit'] === true || $item['discount'] === true || $item['new'] === true) {
@@ -176,6 +176,27 @@
                         }
                     }
                 ?>
+                <div class="col-sm-9">
+                    <div class="pagination">
+                        <ul class="pagination-list">
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                        </ul>
+                        <div class="pagination-nav">
+                            <div class="pagination-nav-item pagination-nav-item--prev">
+                                <svg width="8" height="10">
+                                    <use xlink:href="#arrow-prev-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="pagination-nav-item pagination-nav-item--next ">
+                                <svg width="8" height="10">
+                                    <use xlink:href="#arrow-next-icon"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

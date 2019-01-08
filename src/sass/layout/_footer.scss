@@ -1,0 +1,35 @@
+#app-footer {
+    padding: 15px 0;
+    background: #1e3254;
+
+    .app-footer-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__text {
+            font-size: 12px;
+            color: #bbc7da;
+            margin-bottom: 15px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                margin-bottom: 0;
+            }
+
+            a {
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    }
+}

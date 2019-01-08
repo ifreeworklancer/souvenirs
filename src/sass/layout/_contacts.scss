@@ -1,0 +1,124 @@
+#contacts {
+    padding: 30px 15px;
+    background: #223a62;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 30px 0;
+    }
+
+
+    .contacts-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            flex-direction: row;
+        }
+
+        .contacts-item {
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .contacts-list {
+        li {
+            font-size: 14px;
+            font-family: $font-family-base;
+            color: #fff;
+            margin-bottom: 10px;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                text-align: right;
+            }
+
+            a {
+                font-size: 14px;
+                font-family: $font-family-base;
+                color: #fff;
+            }
+        }
+
+        &--nav {
+            li {
+                margin-bottom: 13px;
+                text-align: left;
+
+                a {
+                    font-size: 18px;
+                    color: #fff;
+                    font-family: $headings-font-family;
+                }
+            }
+        }
+    }
+
+    .contacts-social-list {
+        display: flex;
+        margin-bottom: 15px;
+
+        li {
+            margin-left: 20px;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+
+    .contacts-form {
+        display: flex;
+        margin-top: 15px;
+        
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            justify-content: flex-end;
+        }
+
+        .form-row {
+            align-items: center;
+        }
+
+        .form-group-subscribe {
+            display: flex;
+
+            .btn-subscribe {
+                border-radius: 0 4px 4px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px !important;
+                background: #fff;
+                border: none;
+                outline: none;
+
+                svg {
+                    fill: #1c2e4e;
+                }
+            }
+
+            .form-control {
+                border-radius: 4px 0 0 4px;
+                padding: 5px 10px;
+                font-size: 12px;
+                background: #1c2e4e;
+                color: #fff;
+            }
+        }
+
+        label {
+            margin-right: 10px;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 0;
+        }
+    }
+}

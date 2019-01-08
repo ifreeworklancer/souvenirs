@@ -61,6 +61,9 @@ window.jQuery = window.$ = jquery;
     $('.label-search').on('click', function () {
         $('.form-control-search').toggleClass('active');
     });
+    $('.form-control-search').on('blur', function(){
+        $(this).removeClass('active');
+    })
 
     /**
      * Phone mask
@@ -80,6 +83,16 @@ window.jQuery = window.$ = jquery;
         $(this).children().not('.active').addClass('is-hover');
     }, function () {
         $(this).children().not('.active').removeClass('is-hover');
+    });
+
+    /**
+     * Filter hidden list hover
+     */
+    $('.filter-list-item__link').on('click',function (e) {
+        if($(this).siblings('.filter-hidden-list').length > 0) {
+            e.preventDefault();
+            $(this).siblings('.filter-hidden-list').slideToggle();
+        }
     });
 
     /**
@@ -132,7 +145,7 @@ window.jQuery = window.$ = jquery;
             });
 
             var prevArrowIntro = document.querySelector('.slider-arrow-item--prev-intro');
-            var introSliderIndex = document.querySelector('.slider-nav-number-item--index');
+            var introSliderIndex = document.querySelector('.slider-nav-number-item--index-intro');
 
             introSliderIndex.innerText = flkty1.selectedIndex + 1;
 
@@ -148,10 +161,48 @@ window.jQuery = window.$ = jquery;
                 introSliderIndex.innerText = flkty1.selectedIndex + 1;
             });
 
-            var introSliderlast = document.querySelector('.slider-nav-number-item--last');
+            var introSliderlast = document.querySelector('.slider-nav-number-item--last-intro');
 
             introSliderlast.innerText = flkty1.getCellElements().length;
 
+        }
+    }
+
+    if ($('.new-articles-slider')) {
+
+        var elem2 = document.querySelector('.new-articles-slider');
+        if (elem2) {
+
+            const flkty2 = new Flickity(elem2, {
+                prevNextButtons: false,
+                pageDots: false,
+                cellAlign: 'left',
+                contain: true,
+                draggable: false,
+                cellSelector: '.new-articles-slider-item',
+                wrapAround: true,
+            });
+
+            var prevArrowNewArtic = document.querySelector('.slider-arrow-item--prev-new-articles');
+            var NewArticSliderIndex = document.querySelector('.slider-nav-number-item--index-new-articles');
+
+            NewArticSliderIndex.innerText = flkty2.selectedIndex + 1;
+
+            prevArrowNewArtic.addEventListener('click', function () {
+                flkty2.previous(false, false);
+                NewArticSliderIndex.innerText = flkty2.selectedIndex + 1;
+            });
+
+            var nextArrowNewArtic = document.querySelector('.slider-arrow-item--next-new-articles');
+
+            nextArrowNewArtic.addEventListener('click', function () {
+                flkty2.next(false, false);
+                NewArticSliderIndex.innerText = flkty2.selectedIndex + 1;
+            });
+
+            var NewArticSliderlast = document.querySelector('.slider-nav-number-item--last-new-articles');
+
+            NewArticSliderlast.innerText = flkty2.getCellElements().length;
         }
     }
 

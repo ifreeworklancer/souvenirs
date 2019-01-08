@@ -23,9 +23,9 @@
         <div class="slider-nav slider-nav--intro">
             <div class="decor"></div>
             <div class="slider-nav-number slider-nav-number--white"> 
-                <div class="slider-nav-number-item slider-nav-number-item--index"></div>
+                <div class="slider-nav-number-item slider-nav-number-item--index slider-nav-number-item--index-intro"></div>
                 <div class="slider-nav-number-item slider-nav-number-item--separator">из</div>
-                <div class="slider-nav-number-item slider-nav-number-item--last"></div>
+                <div class="slider-nav-number-item slider-nav-number-item--last slider-nav-number-item--last-intro"></div>
             </div>
             <div class="slider-arrow">
                 <div class="slider-arrow-item slider-arrow-item--prev slider-arrow-item--prev-intro">

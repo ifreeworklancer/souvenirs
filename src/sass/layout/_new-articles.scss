@@ -1,0 +1,111 @@
+#new-articles {
+    padding: 75px 0;
+    background: #fff;
+
+    .section-description {
+        margin-bottom: 30px;
+
+        &__subtitle {
+            font-weight: normal;
+            color: #666666;
+        }
+    }
+
+    .slider-nav {
+        display: flex;
+        align-items: center;
+
+        &-number {
+            margin-right: 25px;
+        }
+    }
+}
+
+.new-articles-item {
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-end;
+    }
+}
+
+.new-articles-slider {
+    width: 100%;
+
+    &-item {
+        width: 100%;
+        padding: 0 15px;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            width: 50%;
+        }
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            width: 33.333%;
+        }
+    }
+}
+
+.articles-card {
+    position: relative;
+    display: block;
+    background: #fff;
+    box-shadow: 0px 0px 14px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    color: $body-color;
+    transition: .5s;
+
+    &-header {
+        position: relative;
+        width: 100%;
+        height: 175px;
+        overflow: hidden;
+
+        .img {
+            @extend %pos;
+            @extend %img;
+            transform: scale(1);
+            transition: .7s;
+        }
+    }
+
+    &-body {
+        padding: 30px 35px;
+
+        .content {
+
+            .data {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 15px;
+                font-size: 12px;
+                color: $light;
+
+                &__icon {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.1);
+
+        .articles-card-header {
+
+            .img {
+                transform: scale(1.1);
+            }
+        }
+
+        .articles-card-body {
+
+            .content {
+                .title {
+                    color: $body-color;
+                }
+            }
+        }
+    }
+}
