@@ -8,6 +8,27 @@
     cursor: pointer;
     z-index: 120;
 
+    &.active {
+
+        .line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            &--top {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            
+            &--middle {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &--bottom {
+                width: 0;
+            }
+        }
+    }
+
     .line {
         width: 20px;
         height: 2px;
@@ -26,6 +47,7 @@
     &-nav {
         @extend %pos;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 

@@ -308,6 +308,16 @@
                 }
                 ?>
             </ul>
+            <div class="header-change">
+                <ul class="header-change-list header-change-list--currency">
+                    <li class="active"><a href="#">грн</a></li>
+                    <li><a href="##">usd</a></li>
+                </ul>
+                <ul class="header-change-list">
+                    <li class="active"><a href="#">ru</a></li>
+                    <li><a href="##">ua</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
