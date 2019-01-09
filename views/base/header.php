@@ -10,8 +10,8 @@
         <?= $app_title ?>
     </title>
 
-    <link rel="stylesheet" href="fonts/font.css">
-    <link rel="stylesheet" href="dist/app.css">
+    <link rel="stylesheet" href="../fonts/font.css">
+    <link rel="stylesheet" href="../dist/app.css">
 </head>
 
 <body>

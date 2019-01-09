@@ -1,0 +1,68 @@
+#page-about {
+    background: #ecf1f4;
+
+    .section-title {
+        max-width: 360px;
+    }
+
+    .section-description {
+        position: relative;
+        max-width: 440px;
+        padding-left: 25px;
+        font-weight: 300;
+
+        &::before {
+            content: '';
+            @extend %pos;
+            right: auto;
+            width: 1px;
+            background: $primary;
+        }
+    }
+}
+
+.page-about-item {
+
+    &-images {
+        padding-top: 70px;
+        float: right;
+        width: 100%;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            width: 50%;
+        }
+
+        &-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .image {
+            position: relative;
+            margin-bottom: 80px;
+            width: 200px;
+            height: 100px;
+            @extend %img;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                width: 275px;
+                height: 175px;
+            }
+
+            &--top {
+                top: -70px;
+            }
+        }
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+}
+

@@ -61,7 +61,7 @@ window.jQuery = window.$ = jquery;
     $('.label-search').on('click', function () {
         $('.form-control-search').toggleClass('active');
     });
-    $('.form-control-search').on('blur', function(){
+    $('.form-control-search').on('blur', function () {
         $(this).removeClass('active');
     })
 
@@ -88,8 +88,8 @@ window.jQuery = window.$ = jquery;
     /**
      * Filter hidden list hover
      */
-    $('.filter-list-item__link').on('click',function (e) {
-        if($(this).siblings('.filter-hidden-list').length > 0) {
+    $('.filter-list-item__link').on('click', function (e) {
+        if ($(this).siblings('.filter-hidden-list').length > 0) {
             e.preventDefault();
             $(this).siblings('.filter-hidden-list').slideToggle();
         }
@@ -242,15 +242,17 @@ window.jQuery = window.$ = jquery;
  * Filter Rangre Multiply 
  */
 var elm = document.getElementById('catalog-filter-price');
-var container = elm.parentNode;
-var values = elm.getAttribute('data-values').split(' ');
+if (elm) {
+    var container = elm.parentNode;
+    var values = elm.getAttribute('data-values').split(' ');
 
-values.forEach(function (value, i, values) {
-    var rangePart = elm.cloneNode();
-    rangePart.type = 'range';
-    rangePart.removeAttribute('data-values');
-    rangePart.value = value;
-    rangePart = container.insertBefore(rangePart, elm);
-});
+    values.forEach(function (value, i, values) {
+        var rangePart = elm.cloneNode();
+        rangePart.type = 'range';
+        rangePart.removeAttribute('data-values');
+        rangePart.value = value;
+        rangePart = container.insertBefore(rangePart, elm);
+    });
 
-elm.remove();
+    elm.remove();
+}
