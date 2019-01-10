@@ -96,6 +96,18 @@ window.jQuery = window.$ = jquery;
     });
 
     /**
+     * Check password
+     */
+    $('.check-password').on('click', function () {
+        var input = $(this).siblings(".form-control-password");
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+          } else {
+            input.attr("type", "password");
+          }
+    });
+
+    /**
      * Modal
      */
 
@@ -206,6 +218,7 @@ window.jQuery = window.$ = jquery;
         }
     }
 
+
     /**
      * Animate scroll
      */
@@ -235,6 +248,8 @@ window.jQuery = window.$ = jquery;
     //     distance: '200px',
     // });
 
+
+
 })(jQuery)
 
 
@@ -256,3 +271,31 @@ if (elm) {
 
     elm.remove();
 }
+
+/**
+ * Quantity
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    var inputs = document.getElementsByClassName('quantity')
+
+    function incInputNumber(input, step) {
+        var val = +input.value
+        if (isNaN(val)) val = 0
+        val += step
+        input.value = val > 0 ? val : 0
+        // If you need to change the input value in the DOM :
+        // var newValue = val > 0 ? val : 0;
+        // input.setAttribute("value", newValue);
+    }
+
+    Array.prototype.forEach.call(inputs, function (el) {
+        var input = el.getElementsByTagName('input')[0]
+
+        el.getElementsByClassName('quantity-up')[0].addEventListener('click', function () {
+            incInputNumber(input, 1)
+        })
+        el.getElementsByClassName('quantity-down')[0].addEventListener('click', function () {
+            incInputNumber(input, -1)
+        })
+    })
+});

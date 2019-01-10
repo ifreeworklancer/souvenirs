@@ -339,8 +339,14 @@ $page_about = [
 ];
 
 $page_basket = [
-    'title' => '',
+    'title' => 'Корзина',
     'list' => [
+        [
+            'image' => '../images/content/page/page-basket/page-basket-1.jpg',
+            'title' => 'Сувенир "Кот Утильный" большой ',
+            'product_code' => 'G-1',
+            'price' => '146'
+        ],
         [
             'image' => '../images/content/page/page-basket/page-basket-1.jpg',
             'title' => 'Сувенир "Кот Утильный" большой ',
