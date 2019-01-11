@@ -37,17 +37,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-xl-3">
-                    <div class="catalog-main-filter-item catalog-main-filter-item--manufacturer">
-                        <div class="title">
-                            Производитель
-                        </div>
-                        <div class="catalog-main-filter-item-container">
-                            <form>
-                                <select class="custom-select" id="catalog-filter-manufacturer">
-                                    <option selected>“Своє Краще”</option>
-                                    <option value="2">“Своє Краще 2”</option>
-                                </select>
-                            </form>
+                    <div class="form-group form-group--select form-group--white-bg">
+                        <label for="user-change-city">Город</label>
+                        <div class="center">
+                            <select name="sources" id="sources" class="custom-select sources" placeholder="Выберите производителя">
+                                <option value="0">Свое краще</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -58,13 +53,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="catalog-secondary-filter-content">
-                        <div class="catalog-secondary-filter-item">
-                            <form>
-                                <select class="custom-select" id="catalog-filter-secondary-order-price">
-                                    <option selected>Цена по возрастанию</option>
-                                    <option value="2">Цена по убыванию</option>
+                        <div class="catalog-secondary-filter-item catalog-secondary-filter-item--select">
+                            <div class="center">
+                                <select name="sources" id="sources" class="custom-select sources" placeholder="Цена по возрастанию">
+                                    <option value="0">Цена по возрастанию</option>
+                                    <option value="1">Цена по убыванию</option>
                                 </select>
-                            </form>
+                            </div>
                         </div>
                         <div class="catalog-secondary-filter-item">
                             <a href="#" class="btn-catalog-filter-reset" id="catalog-filter-reset">

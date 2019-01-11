@@ -5,6 +5,26 @@
     border-radius: 5px;
     transition: .5s;
 
+    &--select {
+        padding: 0 0 5px;
+        width: 100%;
+
+        label {
+            padding: 0 15px;
+        }
+    }
+
+    &--white-bg {
+
+        .custom-select-wrapper {
+            background: #fff;
+        }
+        
+        .custom-select-trigger {
+            background: #fff;
+        }
+    }
+
     &.in-focus {
         border-color: $light;
         background: #fff;
@@ -15,16 +35,16 @@
         text-transform: uppercase;
         color: $light;
     }
-    
+
     .secondary-info {
         position: absolute;
         top: 10px;
         right: 10px;
         text-transform: uppercase;
         font-size: 10px;
-        color: $light;   
+        color: $light;
     }
-    
+
     .check-password {
         position: absolute;
         top: 10px;
@@ -42,4 +62,125 @@
         font-weight: normal;
         padding: 0;
     }
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        flex-direction: row;
+    }
+
+    .form-group {
+        width: 100%;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            width: 45%;
+        }
+    }
+}
+
+.multiselect {}
+
+.center {
+    position: relative;
+    width: 100%;
+}
+
+/** Custom Select **/
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+    background: #f8f8f8;
+}
+
+.custom-select-wrapper select {
+    display: none;
+}
+
+.custom-select {
+    position: relative;
+    padding: 0;
+    background: #f8f8f8;
+}
+
+.custom-select-trigger {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    color: $body-color;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f8f8f8;
+}
+
+.custom-select-trigger:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    right: 25px;
+    margin-top: -3px;
+    border-bottom: 1px solid $light;
+    border-right: 1px solid $light;
+    transform: rotate(45deg) translateY(-50%);
+    transition: all .4s ease-in-out;
+    transform-origin: 50% 0;
+}
+
+.custom-select.opened .custom-select-trigger:after {
+    margin-top: 3px;
+    transform: rotate(-135deg) translateY(-50%);
+}
+
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    min-width: 100%;
+    background: #f8f8f8;
+    border-radius: 4px;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+    z-index: 50;
+    border: 1px solid $light;
+    border-radius: 5px;
+}
+
+.custom-select.opened .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.option-hover:before {
+    background: #f9f9f9;
+}
+
+.custom-option {
+    position: relative;
+    padding: 10px 15px;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: $body-color;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.custom-option:hover,
+.custom-option.selection {
+    background: #f9f9f9;
 }
