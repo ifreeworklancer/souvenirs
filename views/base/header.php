@@ -197,12 +197,12 @@
 <header id="app-header">
     <div class="container-fluid pr-xl-0">
         <div class="row w-100 m-0 align-items-center">
-            <div class="col-2">
+            <div class="col-2 px-0 px-sm-3">
                 <a href="/" class="logo">
                     КРАЩЕСВОЕ
                 </a>
             </div>
-            <div class="col-10 pr-xl-0">
+            <div class="col-10 d-flex justify-content-end align-items-center d-xl-block pr-xl-0">
                 <div class="header-main d-none d-xl-flex">
                     <div class="header-item header-item--full-width">
                         <div class="header-item-row header-item-row--top">
@@ -232,12 +232,22 @@
                             </div>
                             <div class="header-change">
                                 <ul class="header-change-list header-change-list--currency">
-                                    <li class="active"><a href="#">грн</a></li>
-                                    <li><a href="##">usd</a></li>
+                                    <li>
+                                        грн
+                                        <ul class="hidden-change-list">
+                                            <li><a href="##">грн</a></li>
+                                            <li><a href="##">$</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                                 <ul class="header-change-list">
-                                    <li class="active"><a href="#">ru</a></li>
-                                    <li><a href="##">ua</a></li>
+                                    <li>
+                                        ru
+                                        <ul class="hidden-change-list">
+                                            <li><a href="##">ru</a></li>
+                                            <li><a href="##">ua</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -300,6 +310,20 @@
                         </a>
                     </div>
                 </div>
+                <div class="header-item d-block d-xl-none">
+                    <a href="page/page-basket.php" class="header-basket">
+                        <div class="header-basket-icon">
+                            <svg width="15" height="15">
+                                <use xlink:href="#header-basket-icon"></use>
+                            </svg>  
+                            <div class="header-basket-icon__quantity">2</div>
+                        </div>
+                        <div class="header-basket-price">
+                            <span class="header-basket-price__value">126</span>
+                            <span class="header-basket-price__currency">грн</span>
+                        </div>
+                    </a>
+                </div>
                 <div class="burger-menu d-flex d-xl-none">
                     <div class="line line--top"></div>
                     <div class="line line--middle"></div>
@@ -328,19 +352,29 @@
             </ul>
             <div class="header-change">
                 <ul class="header-change-list header-change-list--currency">
-                    <li class="active"><a href="#">грн</a></li>
-                    <li><a href="##">usd</a></li>
+                    <li>
+                        грн
+                        <ul class="hidden-change-list">
+                            <li><a href="##">грн</a></li>
+                            <li><a href="##">$</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="header-change-list">
-                    <li class="active"><a href="#">ru</a></li>
-                    <li><a href="##">ua</a></li>
+                    <li>
+                        ru
+                        <ul class="hidden-change-list">
+                            <li><a href="##">ru</a></li>
+                            <li><a href="##">ua</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
+    <?php require_once __DIR__.('../../modules/basket-modal.php'); ?>
 </header>
 
-<?php require_once __DIR__.('../../modules/basket-modal.php'); ?>
 
 <!-- Main -->
 <main>
