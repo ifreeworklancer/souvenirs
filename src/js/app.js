@@ -77,7 +77,7 @@ window.jQuery = window.$ = jquery;
     });
 
     /**
-     * Header change list li:Hover 
+     * Header change list li:Hover
      */
     $('.header-change-list').hover(function () {
         $(this).children().not('.active').addClass('is-hover');
@@ -102,49 +102,71 @@ window.jQuery = window.$ = jquery;
         var input = $(this).siblings(".form-control-password");
         if (input.attr("type") == "password") {
             input.attr("type", "text");
-          } else {
+        } else {
             input.attr("type", "password");
-          }
+        }
+    });
+
+    /**
+     * Open all
+     */
+    $('.open-all--specifications').on('click', function () {
+        $(this).toggleClass('active');
+        $('.specifications').toggleClass('active');
+    });
+
+    $('.open-all--reviews').on('click', function () {
+        $(this).toggleClass('active');
+        $('.send-reviews').slideToggle('active');
     });
 
     /**
      * Select
      */
-    $(".custom-select").each(function() {
-  var classes = $(this).attr("class"),
-      id      = $(this).attr("id"),
-      name    = $(this).attr("name");
-  var template =  '<div class="' + classes + '">';
-      template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-      template += '<div class="custom-options">';
-      $(this).find("option").each(function() {
-        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-      });
-  template += '</div></div>';
-  
-  $(this).wrap('<div class="custom-select-wrapper"></div>');
-  $(this).hide();
-  $(this).after(template);
-});
-$(".custom-option:first-of-type").hover(function() {
-  $(this).parents(".custom-options").addClass("option-hover");
-}, function() {
-  $(this).parents(".custom-options").removeClass("option-hover");
-});
-$(".custom-select-trigger").on("click", function() {
-  $('html').one('click',function() {
-    $(".custom-select").removeClass("opened");
-  });
-  $(this).parents(".custom-select").toggleClass("opened");
-  event.stopPropagation();
-});
-$(".custom-option").on("click", function() {
-  $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-  $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-  $(this).addClass("selection");
-  $(this).parents(".custom-select").removeClass("opened");
-  $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-});
+    $(".custom-select").each(function () {
+        var classes = $(this).attr("class"),
+            id = $(this).attr("id"),
+            name = $(this).attr("name");
+        var template = '<div class="' + classes + '">';
+        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function () {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+        });
+        template += '</div></div>';
+
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function () {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function () {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function () {
+        $('html').one('click', function () {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this).parents(".custom-select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function () {
+        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".custom-select").removeClass("opened");
+        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+
+
+    /**
+     * Basket modal
+     */
+    if($('.basket-modal').hasClass('active')) {
+        var headerHeight = $('#app-header').height();
+        $('.basket-modal').css('top', `${headerHeight + 10}px`)
+    }
 
     /**
      * Modal
@@ -257,6 +279,60 @@ $(".custom-option").on("click", function() {
         }
     }
 
+    if ($('.page-product-item-prev')) {
+
+        var elem3 = document.querySelector('.page-product-item-prev');
+        if (elem3) {
+
+            const flkty3 = new Flickity(elem3, {
+                prevNextButtons: false,
+                cellAlign: 'left',
+                contain: true,
+                draggable: true,
+                wrapAround: true,
+            });
+        }
+    }
+
+    if ($('.reviews-slider')) {
+
+        var elem4 = document.querySelector('.reviews-slider');
+        if (elem4) {
+
+            const flkty4 = new Flickity(elem4, {
+                prevNextButtons: false,
+                pageDots: false,
+                cellAlign: 'left',
+                contain: true,
+                draggable: true,
+                adaptiveHeight: true,
+                wrapAround: true,
+            });
+
+            var prevArrowProductReviews = document.querySelector('.slider-arrow-item--prev-product-reviews');
+            var ProductReviewsSliderIndex = document.querySelector('.slider-nav-number-item--index-product-reviews');
+
+            ProductReviewsSliderIndex.innerText = flkty4.selectedIndex + 1;
+
+            prevArrowProductReviews.addEventListener('click', function () {
+                flkty4.previous(false, false);
+                ProductReviewsSliderIndex.innerText = flkty4.selectedIndex + 1;
+            });
+
+            var nextArrowProductReviews = document.querySelector('.slider-arrow-item--next-product-reviews');
+
+            nextArrowProductReviews.addEventListener('click', function () {
+                flkty4.next(false, false);
+                ProductReviewsSliderIndex.innerText = flkty4.selectedIndex + 1;
+            });
+
+            var ProductReviewsSliderlast = document.querySelector('.slider-nav-number-item--last-product-reviews');
+
+            ProductReviewsSliderlast.innerText = flkty4.getCellElements().length;
+        }
+    }
+
+    // ProductReviews
 
     /**
      * Animate scroll
@@ -288,12 +364,11 @@ $(".custom-option").on("click", function() {
     // });
 
 
-
 })(jQuery)
 
 
 /**
- * Filter Rangre Multiply 
+ * Filter Rangre Multiply
  */
 var elm = document.getElementById('catalog-filter-price');
 if (elm) {

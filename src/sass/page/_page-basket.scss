@@ -135,68 +135,6 @@
         }
     }
 
-    .quantity {
-        position: relative;
-        width: 100%;
-        max-width: 120px;
-        margin-right: 50px;
-        border: 1px solid #e1e1e1;
-        border-radius: 5px;
-        padding: 10px;
-
-        .quantity-label {
-
-            &__title {
-                display: flex;
-                justify-content: center;
-                text-transform: uppercase;
-                font-size: 10px;
-                color: $light;
-            }
-        }
-
-        .quantity-input {
-            color: $body-color;
-            font-family: $headings-font-family;
-            padding: 0;
-            text-align: center;
-            background: transparent;
-
-            &::-webkit-inner-spin-button,
-            &::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-        }
-
-        .quantity-button {
-            position: absolute;
-            top: 5px;
-            bottom: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 24px;
-            border: 1px solid #e1e1e1;
-            font-size: 12px;
-            background: #fff;
-            user-select: none;
-            transition: .5s;
-
-            &.quantity-down {
-                left: 5px;
-            }
-
-            &.quantity-up {
-                right: 5px;
-            }
-
-            &:hover {
-                background: #DADFE1;
-            }
-        }
-    }
-
     .price {
         font-size: 24px;
         font-weight: bold;
