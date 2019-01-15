@@ -1,5 +1,5 @@
 <!-- Basket Modal -->
-<div class="basket-modal active">
+<div class="basket-modal">
     <div class="basket-modal-header">
         <div class="basket-modal-header__title">Вы добавили товар в корзину</div>
         <div class="close-basket-modal">

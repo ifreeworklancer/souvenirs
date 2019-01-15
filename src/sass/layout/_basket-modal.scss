@@ -4,7 +4,7 @@
   right: 60px;
   width: 100%;
   max-width: 520px;
-  transition: .5s;
+  transition: .7s;
   display: none;
 
   @media (min-width: map_get($grid-breakpoints, sm)) {
@@ -14,7 +14,11 @@
   @media (min-width: map_get($grid-breakpoints, xl)) {
     right: 20px;
   }
-  
+
+  &.active {
+    top: 79px;
+  }
+
   &-header {
     position: relative;
     padding: 20px;
